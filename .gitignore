@@ -1,0 +1,4 @@
+.terraform/
+terraform/ip_address.txt
+terraform/terraform.tfstate*
+terraform/terraform.tfvars

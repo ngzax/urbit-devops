@@ -1,0 +1,12 @@
+#!/usr/bin/expect -f
+
+set timeout -1
+
+spawn tmux -q new "cd piers && urbit -c new-comet"
+expect {
+  "urbit 0.4.5" {
+    send "\002"
+    send "d"
+  }
+  eof
+}
