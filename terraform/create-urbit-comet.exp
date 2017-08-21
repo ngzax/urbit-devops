@@ -2,11 +2,12 @@
 
 set timeout -1
 
-spawn tmux -q new "cd piers && urbit -c new-comet"
+spawn screen
+
+send "cd piers && urbit -c new-comet\n"
 expect {
   "urbit 0.4.5" {
-    send "\002"
+    send "\001"
     send "d"
   }
-  eof
 }
