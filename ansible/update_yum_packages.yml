@@ -1,0 +1,9 @@
+---
+- hosts: all
+  remote_user: ec2-user
+
+  tasks:
+  - name: Update all packages to latest
+    become: yes
+    become_method: sudo
+    yum: name=* state=latest
