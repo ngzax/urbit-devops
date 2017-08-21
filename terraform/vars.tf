@@ -1,7 +1,6 @@
 # These variable MUST be set in your terraform.tfvars file
 variable "PATH_TO_PRIVATE_KEY" { }
 variable "PRIVATE_KEY_NAME" { }
-variable "PROFILE" { }
 variable "SHARED_CREDENTIALS_FILE" { }
 
 # These variable can be optionally overridden in your terraform.tfvars file
@@ -19,6 +18,10 @@ variable "AWS_REGION" {
 
 variable "AWS_USERNAME" {
   default = "ec2-user"
+}
+
+variable "PROFILE" {
+  default = "default"
 }
 
 variable "SECURITY_GROUP_NAME" {
