@@ -1,5 +1,5 @@
 # Make sure all our base packages are up-to-date
-sum yum update -y
+sudo yum update -y
 
 # Install all urbit dependencies
 sudo yum --enablerepo epel install -y gcc gcc-c++ gmp-devel openssl-devel ncurses-devel libsigsegv-devel ctags automake autoconf libtool cmake re2c libcurl-devel
