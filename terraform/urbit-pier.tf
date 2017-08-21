@@ -1,7 +1,7 @@
 provider "aws" {
-  access_key = "${var.AWS_ACCESS_KEY}"
-  secret_key = "${var.AWS_SECRET_KEY}"
-  region     = "${var.AWS_REGION}"
+  shared_credentials_file = "${var.SHARED_CREDENTIALS_FILE}"
+  profile                 = "${var.PROFILE}"
+  region                  = "${var.AWS_REGION}"
 }
 
 resource "aws_instance" "urbit-pier" {
@@ -11,7 +11,6 @@ resource "aws_instance" "urbit-pier" {
   security_groups   = ["${var.SECURITY_GROUP_NAME}"]
 
   tags {
-    name    = "${var.URBIT_SHIP_NAME}",
     purpose = "urbit"
   }
 

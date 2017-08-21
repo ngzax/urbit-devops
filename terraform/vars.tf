@@ -1,9 +1,8 @@
 # These variable MUST be set in your terraform.tfvars file
-variable "AWS_ACCESS_KEY" { }
-variable "AWS_SECRET_KEY" { }
 variable "PATH_TO_PRIVATE_KEY" { }
 variable "PRIVATE_KEY_NAME" { }
-variable "SECURITY_GROUP_NAME" { }
+variable "PROFILE" { }
+variable "SHARED_CREDENTIALS_FILE" { }
 
 # These variable can be optionally overridden in your terraform.tfvars file
 variable "AWS_AMI_ID" {
@@ -20,6 +19,10 @@ variable "AWS_REGION" {
 
 variable "AWS_USERNAME" {
   default = "ec2-user"
+}
+
+variable "SECURITY_GROUP_NAME" {
+  default = "default"
 }
 
 variable "URBIT_SHIP_NAME" {
