@@ -23,15 +23,19 @@ These are all good ideas. I am not going to cover #1, 2, or 5 but Amazon’s doc
 
 
 - Click on the “Groups” link on the left sidebar and then click the “Create New Group” button:
+
 ![](https://www.dropbox.com/s/b44n1ztxjb2ypsf/create-group-0.png?dl=1)
 
 - Give your new groups a name, I chose “Deployers”:
+
 ![](https://www.dropbox.com/s/ojifbpxa3sldwoa/create-group-1.png?dl=1)
 
 - Attach the Policy “PowerUser” to the group. This will give it the appropriate permissions for our scripts to be able to create and manipulate our urbit EC2 instances
+
 ![](https://www.dropbox.com/s/fvkmsrhag3ny1vr/create-group-2.png?dl=1)
 
 - Review and Accept
+
 ![](https://www.dropbox.com/s/k6r3him17s4w8p1/create-group-3.png?dl=1)
 
 
@@ -47,17 +51,16 @@ We want to create a separate user account to perform these operations. It is not
 ![](https://www.dropbox.com/s/uw46pn4ys9zxxsu/add-user-0.png?dl=1)
 
 - You will then be able to give the user a name, in this case I chose “ansible,” but anything will do. Make sure to check the box for “programmatic access” as this user should never be able to log into the AWS console.
+
 ![](https://www.dropbox.com/s/o24c0inqkihxiu9/add-user-1.png?dl=1)
 
 - Add your user into the “Deployers” group that we created in **Step 2**.
+
 ![](https://www.dropbox.com/s/kfdz4fh5h1k6ve7/add-user-2.png?dl=1)
 
 - Review and confirm.
 
-
 ![](https://www.dropbox.com/s/9r7njrjabd13wsz/add-user-3.png?dl=1)
-
-
 
 - Amazon will now give you the opportunity to download the credentials (Access Key and Secret Key) for you user. You will need this. Please download and store it in a safe place.
 
