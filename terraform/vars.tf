@@ -24,8 +24,8 @@ variable "PROFILE" {
   default = "default"
 }
 
-variable "SECURITY_GROUP_NAME" {
-  default = "default"
+variable "STATE" {
+  default = "ohio"
 }
 
 variable "URBIT_SHIP_NAME" {
