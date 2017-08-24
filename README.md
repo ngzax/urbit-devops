@@ -14,30 +14,30 @@ Now, log into your account and go to the Identity and Access Management (IAM) Da
 Amazon will now want you to make your account more secure by performing 5 steps.
 
 
-![Once you have completed all 5 steps it will look like this](https://d2mxuefqeaa7sj.cloudfront.net/s_27FA2AE7BFBDD9CBE4488657D1ADA4DBAA57BF2067F40D041A820CB0D7A4159A_1503406737419_Screen+Shot+2017-08-22+at+8.58.30+AM.png)
+![Once you have completed all 5 steps it will look like this](http://www.ngzax.com/images/terraform/amazon-security-status.png)
 
 
 These are all good ideas. I am not going to cover #1, 2, or 5 but Amazon’s docs are pretty decent. We need to make the group and non-root user for our scripts anyway so let’s dive in.
+
 
 ### Step 2: Create a group for defining permissions for your automation script user
 
 
 - Click on the “Groups” link on the left sidebar and then click the “Create New Group” button:
 
-![](https://www.dropbox.com/s/b44n1ztxjb2ypsf/create-group-0.png?dl=1)
+![](http://www.ngzax.comhttp://www.ngzax.com/images/terraform/create-group-0.png)
 
 - Give your new groups a name, I chose “Deployers”:
 
-![](https://www.dropbox.com/s/ojifbpxa3sldwoa/create-group-1.png?dl=1)
+![](http://www.ngzax.com/images/terraform/create-group-1.png)
 
 - Attach the Policy “PowerUser” to the group. This will give it the appropriate permissions for our scripts to be able to create and manipulate our urbit EC2 instances
 
-![](https://www.dropbox.com/s/fvkmsrhag3ny1vr/create-group-2.png?dl=1)
+![](http://www.ngzax.com/images/terraform/create-group-2.png)
 
 - Review and Accept
 
-![](https://www.dropbox.com/s/k6r3him17s4w8p1/create-group-3.png?dl=1)
-
+![](http://www.ngzax.com/images/terraform/create-group-3.png)
 
 
 ### Step 3: Create a dedicated user to run your devops scripts
@@ -48,27 +48,26 @@ We want to create a separate user account to perform these operations. It is not
 - Click on the “Users” link on the left-hand side and then click the button to add a User.
 
 
-![](https://www.dropbox.com/s/uw46pn4ys9zxxsu/add-user-0.png?dl=1)
+![](http://www.ngzax.com/images/terraform/add-user-0.png)
 
 - You will then be able to give the user a name, in this case I chose “ansible,” but anything will do. Make sure to check the box for “programmatic access” as this user should never be able to log into the AWS console.
 
-![](https://www.dropbox.com/s/o24c0inqkihxiu9/add-user-1.png?dl=1)
+![](http://www.ngzax.com/images/terraform/add-user-1.png)
 
 - Add your user into the “Deployers” group that we created in **Step 2**.
 
-![](https://www.dropbox.com/s/kfdz4fh5h1k6ve7/add-user-2.png?dl=1)
+![](http://www.ngzax.com/images/terraform/add-user-2.png)
 
 - Review and confirm.
 
-![](https://www.dropbox.com/s/9r7njrjabd13wsz/add-user-3.png?dl=1)
+![](http://www.ngzax.com/images/terraform/add-user-3.png)
 
 - Amazon will now give you the opportunity to download the credentials (Access Key and Secret Key) for you user. You will need this. Please download and store it in a safe place.
 
-
-![](https://www.dropbox.com/s/ofe0hhgqmas92jg/add-user-4.png?dl=1)
+![](http://www.ngzax.com/images/terraform/add-user-4.png)
 
 ### Step 4: Create a key pair and download the private key for your desired EC2 zone.
-![](https://www.dropbox.com/s/89v0z1vhgkohmgt/create-keypair-0.png?dl=1)
+![](http://www.ngzax.com/images/terraform/create-keypair-0.png)
 
 
 As you can see, I named it “{user}-key-pair-{region}”. This is arbitrary but will help you identify it later. Key pairs are unique within regions so it helps to have that in the name as well. When you create it it will automatically download the private key portion to your computer with the name “{keypair name}.pem.txt”.
@@ -151,7 +150,7 @@ The terraform process created a file in the terraform directory called “ip_add
 
 Put this address in your web browser and you should see the homepage of your new comet:
 
-![](https://d2mxuefqeaa7sj.cloudfront.net/s_27FA2AE7BFBDD9CBE4488657D1ADA4DBAA57BF2067F40D041A820CB0D7A4159A_1503427323729_Screen+Shot+2017-08-22+at+10.42.39+AM.png)
+![](http://www.ngzax.com/images/terraform/urbit-new-comet.png)
 
 You can click on the Log In link and it will ask you for a code. To get the code you’ll need to connect to your new comet via ssh using the -i option and passing it the path to your key pair as shown:
 
