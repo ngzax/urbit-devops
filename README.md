@@ -99,7 +99,9 @@ If you have multiple AWS account you can add multiple named sections to this fil
 
 ### Step 7: Create a terraform.tfvars file in the terraform directory
 
-This is the file that contains the specific information about your Amazon account and credentials and where they exist on your local computer. At minimum, the file needs to contain 3 lines that should look something like this:
+This is the file that contains the specific information about your Amazon
+account and credentials and where they exist on your local computer. At minimum,
+the file needs to contain 3 lines that should look something like this:
 
 
     $ cat terraform.tfvars
@@ -107,20 +109,28 @@ This is the file that contains the specific information about your Amazon accoun
     PRIVATE_KEY_NAME        = "ansible-key-pair-ohio"
     SHARED_CREDENTIALS_FILE = "~/.aws/credentials"
 
-The path to private key is the one that you created and downloaded in step 4. The name is just its name and the shared credentials is what you created in step 5.
+The path to private key is the one that you created and downloaded in step 4.
+The name is just its name and the shared credentials is what you created in step
+5.
 
-If you have more than one Amazon account profile in your ~/.aws/credentials file you can select the one you want to use by adding it to terraform.tfvars:
+If you have more than one Amazon account profile in your ~/.aws/credentials file
+you can select the one you want to use by adding it to terraform.tfvars:
 
 
     PROFILE                 = "ansible"
 
 
-### Step 8: Run Terraform
+### Step 8: Install and Run Terraform
 
-You can run “terraform plan” to see what terraform is going to execute on your behalf. To actually deploy your urbit, use “terraform apply”
+Go to https://www.terraform.io/downloads.html and download the terraform binary.
+Put it somewhere in your path.
+
+From the urbit-devops/terraform directory you can run “terraform plan” to see
+what terraform is going to execute on your behalf. Once you are ready, to
+actually deploy your urbit, use “terraform apply”
 
 
-    $ terraform appply
+    $ terraform apply
     aws_security_group.urbit-sg: Creating...
       description:                           "" => "Urbit Default Security Group"
       egress.#:                              "" => "<computed>"
