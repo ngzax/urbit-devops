@@ -96,13 +96,11 @@ If you have multiple AWS account you can add multiple named sections to this fil
     $ git clone git@github.com:ngzax/urbit-devops.git
     $ cd urbit-devops/terraform
 
-
 ### Step 7: Create a terraform.tfvars file in the terraform directory
 
 This is the file that contains the specific information about your Amazon
 account and credentials and where they exist on your local computer. At minimum,
 the file needs to contain 3 lines that should look something like this:
-
 
     $ cat terraform.tfvars
     PATH_TO_PRIVATE_KEY     = "~/.ssh/ansible-key-pair-ohio.pem"
@@ -116,9 +114,15 @@ The name is just its name and the shared credentials is what you created in step
 If you have more than one Amazon account profile in your ~/.aws/credentials file
 you can select the one you want to use by adding it to terraform.tfvars:
 
-
     PROFILE                 = "ansible"
 
+Another important variable that you probably want to override is the
+ALLOW_SSH_FROM_IPS. This variable controls what ip addresses (or ranges) are
+allowed to access your urbit server via ssh. You will want to determine your
+local ip address and make sure to put that in there instead of the default which
+allows all addresses.
+
+[Click here for Amazon's documentation about security groups.](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html)
 
 ### Step 8: Install and Run Terraform
 
