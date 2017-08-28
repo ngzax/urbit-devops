@@ -12,7 +12,7 @@ resource "aws_security_group" "urbit-sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["158.81.208.0/24", "71.225.91.254/32"]
+    cidr_blocks = "${var.ALLOW_SSH_FROM_IPS}"
   }
 
   ingress {
