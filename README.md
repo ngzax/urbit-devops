@@ -250,3 +250,30 @@ From urbit-devops/terraform directory:
     terraform destroy
 
 ----------
+
+## Contributing
+
+I would appreciate contributions to urbit-devops.
+
+Everyone involved in the ** urbit-devops ** project needs to understand and
+respect our Code of Conduct,  which has been shamelessly and appropriately
+borrowed in its entirety from [urbit][2]:
+
+> "don't be rude."
+
+If you can code and abide by the simple Code of Conduct, fork the repo and submit a PR. I will review it as soon as I can.
+
+There is a list of requested features and bugs [in the issue tracker][1].
+
+
+## License
+
+"urbit-devops" is copyright (c) 2017 by Daryl Richter (ngzax).
+
+urbit-devops source code is released under the MIT License.
+
+Check the [LICENSE](LICENSE) file for more information.
+
+
+[1]: https://github.com/ngzax/urbit-devops/issues
+[2]: https://github.com/urbit/urbit
