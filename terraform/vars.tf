@@ -18,7 +18,7 @@ variable "ALLOW_SSH_FROM_IP_2" {
 }
 
 variable "AWS_AMI_ID" {
-  default = "ami-8a7859ef"
+  default = "ami-06e54d05255faf8f6"
 }
 
 variable "AWS_INSTANCE_TYPE" {
@@ -26,11 +26,11 @@ variable "AWS_INSTANCE_TYPE" {
 }
 
 variable "AWS_REGION" {
-  default = "us-east-2"
+  default = "us-west-2"
 }
 
 variable "AWS_USERNAME" {
-  default = "ec2-user"
+  default = "ubuntu"
 }
 
 variable "PROFILE" {
@@ -38,7 +38,7 @@ variable "PROFILE" {
 }
 
 variable "STATE" {
-  default = "ohio"
+  default = "oregon"
 }
 
 variable "URBIT_SHIP_NAME" {
