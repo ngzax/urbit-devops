@@ -1,0 +1,5 @@
+Security: Change the operator group from Admin to the group with minimal privelages. 
+          Docs: Keypairs are no longer unique to regions.
+	  Consider rewriting firewall in provision-urbit.sh with UFW which is what the docs use.
+
+Docs: Rewrite the docs for planents instead of comets.
