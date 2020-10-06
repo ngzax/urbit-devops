@@ -50,13 +50,15 @@ resource "aws_instance" "urbit-pier" {
   key_name          = "${var.PRIVATE_KEY_NAME}"
   security_groups   = ["${aws_security_group.urbit-sg.name}"]
 
-  tags {
+#Added = to upgrade from <=0.11 to Terraform 0.13
+  tags = {
     purpose = "urbit"
   }
-
+#Added "host = self.public_ip" to upgrade from <=0.11 to Terraform 0.13
   provisioner "file" {
     connection {
       type = "ssh"
+      host = self.public_ip
       user = "${var.AWS_USERNAME}"
       private_key = "${file("${var.PATH_TO_PRIVATE_KEY}")}"
     }
@@ -67,6 +69,7 @@ resource "aws_instance" "urbit-pier" {
   provisioner "file" {
     connection {
       type = "ssh"
+      host = self.public_ip
       user = "${var.AWS_USERNAME}"
       private_key = "${file("${var.PATH_TO_PRIVATE_KEY}")}"
     }
@@ -77,6 +80,7 @@ resource "aws_instance" "urbit-pier" {
   provisioner "remote-exec" {
     connection {
       type = "ssh"
+      host = self.public_ip
       user = "${var.AWS_USERNAME}"
       private_key = "${file("${var.PATH_TO_PRIVATE_KEY}")}"
     }
